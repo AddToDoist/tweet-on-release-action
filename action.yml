@@ -1,0 +1,18 @@
+name: 'Tweet On Release'
+description: 'The GH action that tweets when a new AddTodoist version is released'
+inputs:
+  consumer-key:
+    required: true
+    description: 'The consumer key of the application'
+  consumer-secret:
+    required: true
+    description: 'The consumer secret of the application'
+  access-token:
+    required: true
+    description: 'The access token of the application'
+  access-token-secret:
+    required: true
+    description: 'The access token secret of the application'
+runs:
+  using: 'node16'
+  main: 'index.js'

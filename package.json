@@ -1,0 +1,14 @@
+{
+  "name": "tweet-on-release-action",
+  "version": "1.0.0",
+  "description": "The GH action that tweets when a new AddTodoist version is released",
+  "main": "index.js",
+  "type": "module",
+  "author": "David Jiménez <dubisdev@gmail.com> (https://dubis.dev)",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "axios": "0.27.2",
+    "twitter-api-v2": "1.12.5"
+  }
+}
