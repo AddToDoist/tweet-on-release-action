@@ -1,7 +1,7 @@
 const axios = require("axios");
-const uploadImage = async (url) => {
+const uploadImage = async (url, client) => {
   const image_buffer = await getImageFromUrl(url);
-  const uploadedImageId = await uploadImageToTwitter(image_buffer);
+  const uploadedImageId = await uploadImageToTwitter(image_buffer, client);
   return uploadedImageId;
 };
 
@@ -16,8 +16,8 @@ const getImageFromUrl = async (url) => {
   return Buffer.from(response.data);
 };
 
-const uploadImageToTwitter = async (image_buffer) => {
-  const imageId = await userClient.v1.uploadMedia(image_buffer, {
+const uploadImageToTwitter = async (image_buffer, client) => {
+  const imageId = await client.v1.uploadMedia(image_buffer, {
     mimeType: "image/png",
   });
   return imageId;

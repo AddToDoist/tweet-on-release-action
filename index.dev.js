@@ -2,8 +2,6 @@ const core = require( "@actions/core")
 const { TwitterApi } = require( "twitter-api-v2")
 const { uploadImage, getLatestReleaseText } = require( "./helpers")
 
-console.log(core)
-
 const IMG_URL =
   "https://github.com/AddToDoist/AddToDoist/blob/main/assets/social-preview.png?raw=true";
 const RELEASE_URL =
@@ -18,7 +16,7 @@ async function main() {
   });
   try {
     const [imageId, releaseText] = await Promise.all([
-      uploadImage(IMG_URL),
+      uploadImage(IMG_URL, userClient),
       getLatestReleaseText(RELEASE_URL),
     ]);
     await userClient.v2.tweet(releaseText, { media: { media_ids: [imageId] } });
