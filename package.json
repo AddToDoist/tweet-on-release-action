@@ -6,9 +6,13 @@
   "type": "module",
   "author": "David Jiménez <dubisdev@gmail.com> (https://dubis.dev)",
   "license": "MIT",
+  "scripts": {
+    "build": "esbuild index.dev.js --outfile=index.js --minify --bundle --platform=node --format=esm"
+  },
   "dependencies": {
-    "@actions/core": "^1.9.1",
+    "@actions/core": "1.9.1",
     "axios": "0.27.2",
+    "esbuild": "0.15.3",
     "twitter-api-v2": "1.12.5"
   }
 }
