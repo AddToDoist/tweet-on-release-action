@@ -1,6 +1,6 @@
 {
   "name": "tweet-on-release-action",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "The GH action that tweets when a new AddTodoist version is released",
   "main": "index.js",
   "author": "David Jiménez <dubisdev@gmail.com> (https://dubis.dev)",
