@@ -1,13 +1,12 @@
 {
   "name": "tweet-on-release-action",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "The GH action that tweets when a new AddTodoist version is released",
   "main": "index.js",
-  "type": "module",
   "author": "David Jiménez <dubisdev@gmail.com> (https://dubis.dev)",
   "license": "MIT",
   "scripts": {
-    "build": "esbuild index.dev.js --outfile=index.js --minify --bundle --platform=node --format=esm"
+    "build": "esbuild index.dev.js --outfile=index.js --minify --bundle --platform=node --target=node16"
   },
   "dependencies": {
     "@actions/core": "1.9.1",
