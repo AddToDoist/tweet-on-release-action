@@ -8,7 +8,7 @@ const uploadImage = async (url, client) => {
 const getLatestReleaseText = async (releaseUrl) => {
   const { data } = await axios.get(releaseUrl);
   const { html_url, name } = data;
-  return `🔴 New AddToDoist version! (${name}) 🎉\n\n⬇️ See what's new here:\n${html_url}`;
+  return `🔴 New AddTodoist version! (${name}) 🎉\n\n⬇️ See what's new here:\n${html_url}`;
 };
 
 const getImageFromUrl = async (url) => {
