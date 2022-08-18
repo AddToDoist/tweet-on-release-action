@@ -3,9 +3,9 @@ const { TwitterApi } = require( "twitter-api-v2")
 const { uploadImage, getLatestReleaseText } = require( "./helpers")
 
 const IMG_URL =
-  "https://github.com/AddToDoist/AddToDoist/blob/main/assets/social-preview.png?raw=true";
+  "https://github.com/AddTodoist/AddTodoist/blob/main/assets/social-preview.png?raw=true";
 const RELEASE_URL =
-  "https://api.github.com/repos/AddToDoist/AddToDoist/releases/latest";
+  "https://api.github.com/repos/AddTodoist/AddTodoist/releases/latest";
 
 async function main() {
   const userClient = new TwitterApi({
