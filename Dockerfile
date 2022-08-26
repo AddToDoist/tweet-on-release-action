@@ -8,5 +8,7 @@ RUN yarn
 # Copy source to container
 COPY . .
 
+RUN chmod +x index.sh
+
 ENTRYPOINT [ "/index.sh" ]
 
