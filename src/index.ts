@@ -2,8 +2,6 @@ import core from "@actions/core";
 import { TwitterApi } from "twitter-api-v2";
 import { uploadImage, getLatestReleaseText } from "./helpers.js";
 
-console.log(process.argv);
-
 const IMG_URL =
   "https://github.com/AddTodoist/AddTodoist/blob/main/assets/social-preview.png?raw=true";
 const RELEASE_URL =
