@@ -16,15 +16,5 @@ inputs:
     description: 'The access token secret of the application'
 
 runs:
-  using: "composite"
-  steps:
-    - name: Setup Node
-      uses: actions/setup-node@v3
-
-    - name: Install deps
-      run: yarn
-      shell: bash
-
-    - name: Tweet
-      run: yarn start
-      shell: bash
+  using: 'docker'
+  image: 'Dockerfile'
