@@ -1,5 +1,6 @@
 name: 'Tweet On Release'
 description: 'The GH action that tweets when a new AddTodoist version is released'
+
 inputs:
   consumer-key:
     required: true
@@ -13,6 +14,17 @@ inputs:
   access-token-secret:
     required: true
     description: 'The access token secret of the application'
+
 runs:
-  using: 'node16'
-  main: 'index.js'
+  using: "composite"
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v3
+
+    - name: Install deps
+      run: yarn
+      shell: bash
+
+    - name: Tweet
+      run: yarn start
+      shell: bash
