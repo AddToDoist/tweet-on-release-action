@@ -2,16 +2,21 @@ import core from "@actions/core";
 import { TwitterApi } from "twitter-api-v2";
 import { uploadImage, getLatestReleaseText } from "./helpers.js";
 
+console.log(process.argv);
+
 const IMG_URL =
   "https://github.com/AddTodoist/AddTodoist/blob/main/assets/social-preview.png?raw=true";
 const RELEASE_URL =
   "https://api.github.com/repos/AddTodoist/AddTodoist/releases/latest";
 
+const args = process.argv.slice(2);
+const [appKey, appSecret, accessToken, accessSecret] = args;
+
 const userClient = new TwitterApi({
-  appKey: core.getInput("consumer-key"),
-  appSecret: core.getInput("consumer-secret"),
-  accessToken: core.getInput("access-token"),
-  accessSecret: core.getInput("access-token-secret"),
+  appKey,
+  appSecret,
+  accessToken,
+  accessSecret,
 });
 
 try {

@@ -8,5 +8,5 @@ RUN yarn
 # Copy source to container
 COPY . .
 
-CMD [ "yarn", "start" ]
+ENTRYPOINT [ "/index.sh" ]
 

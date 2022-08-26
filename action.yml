@@ -18,3 +18,8 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.consumer-key }}
+    - ${{ inputs.consumer-secret }}
+    - ${{ inputs.access-token }}
+    - ${{ inputs.access-token-secret }}
