@@ -7,22 +7,19 @@ const IMG_URL =
 const RELEASE_URL =
   "https://api.github.com/repos/AddTodoist/AddTodoist/releases/latest";
 
-async function main() {
-  const userClient = new TwitterApi({
-    appKey: core.getInput("consumer-key"),
-    appSecret: core.getInput("consumer-secret"),
-    accessToken: core.getInput("access-token"),
-    accessSecret: core.getInput("access-token-secret"),
-  });
-  try {
-    const [imageId, releaseText] = await Promise.all([
-      uploadImage(IMG_URL, userClient),
-      getLatestReleaseText(RELEASE_URL),
-    ]);
-    await userClient.v2.tweet(releaseText, { media: { media_ids: [imageId] } });
-  } catch (err: any) {
-    core.setFailed(err.message);
-  }
-}
+const userClient = new TwitterApi({
+  appKey: core.getInput("consumer-key"),
+  appSecret: core.getInput("consumer-secret"),
+  accessToken: core.getInput("access-token"),
+  accessSecret: core.getInput("access-token-secret"),
+});
 
-main();
+try {
+  const [imageId, releaseText] = await Promise.all([
+    uploadImage(IMG_URL, userClient),
+    getLatestReleaseText(RELEASE_URL),
+  ]);
+  await userClient.v2.tweet(releaseText, { media: { media_ids: [imageId] } });
+} catch (err: any) {
+  core.setFailed(err.message);
+}
