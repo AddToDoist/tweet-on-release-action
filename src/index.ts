@@ -1,6 +1,6 @@
-const core = require( "@actions/core")
-const { TwitterApi } = require( "twitter-api-v2")
-const { uploadImage, getLatestReleaseText } = require( "./helpers")
+import core from "@actions/core";
+import { TwitterApi } from "twitter-api-v2";
+import { uploadImage, getLatestReleaseText } from "./helpers";
 
 const IMG_URL =
   "https://github.com/AddTodoist/AddTodoist/blob/main/assets/social-preview.png?raw=true";
@@ -20,10 +20,9 @@ async function main() {
       getLatestReleaseText(RELEASE_URL),
     ]);
     await userClient.v2.tweet(releaseText, { media: { media_ids: [imageId] } });
-  } catch (err) {
+  } catch (err: any) {
     core.setFailed(err.message);
   }
 }
 
-main()
-
+main();
